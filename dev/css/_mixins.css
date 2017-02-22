@@ -1,0 +1,11 @@
+@define-mixin triangle $color: white{
+  content: "";
+  display: blocK;
+  width:0;
+  height: 0;
+  border-top: 15px solid $color;
+  border-right: 15px solid transparent;
+  position: absolute;
+  top:0;
+  left:0;
+}
