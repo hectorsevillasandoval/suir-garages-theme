@@ -1,6 +1,11 @@
 :root{
+  /* COLORS */
   --strong-gray: #333;
   --main-red: #f03f35;
+
+  /* FONTS */
+  --main-font: "Oswald";
+  --text-font: "Poppins";
 }
 
 
