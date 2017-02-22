@@ -1,0 +1,12 @@
+:root{
+  --strong-gray: #333;
+  --main-red: #f03f35;
+}
+
+
+/* -- Custom Media queries */
+@custom-media --tablet (min-width: 500px);
+/*@custom-media --tablet (max-width: 650px);*/
+@custom-media --desktop (min-width: 800px);
+@custom-media --huge (min-width: 1200px);
+@custom-media --retina (-webkit-min-device-pixel-ratio: 2);
