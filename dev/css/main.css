@@ -5,7 +5,7 @@
 @import "./jquery.mmenu.all.css";
 @import "./_products.css";
 
-@lost flexbox flex;
+/*@lost flexbox flex;*/
 
 html,
 body{
@@ -86,18 +86,19 @@ h3{
   &__mainMenu{
     display: none;
     order:2;
+		lost-utility:clearfix;
     @media (--desktop){
-      display: flex;
+			display: block;
       lost-column:2/3;
     }
 
     & ul{
-      display: flex;
+
       width: 100%;
-      justify-content: space-around;
       list-style: none;
       margin: 0;
-      align-items: center;
+			text-align: right;
+
     }
     & a{
       color: white;
@@ -111,6 +112,7 @@ h3{
     }
     & li{
       position: relative;
+			display: inline-block;
       &:hover:before{
         @mixin triangle var(--main-red);
       }
@@ -179,24 +181,30 @@ h3{
 		}
 
 		&Container{
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
+			lost-flex-container: column;
 			@media (--tablet){
-				flex-direction: row;
+				lost-flex-container: row;
 				flex-wrap: wrap;
 			}
 
 			> div{
 				text-align: center;
-				max-width: 172px;
+				/*max-width: 172px;*/
 				margin-bottom: 2rem;
+				align-items: flex-start;
 				@media (--tablet){
-					lost-column:1/3;
+					lost-column:1/2 auto 10px;
+				}
+				@media (--desktop){
+					lost-column:1/3 auto 10px;
+				}
+				&:nth-child(n + 5){
+					@media (--tablet){
+						margin-bottom:0;
+					}
 				}
 				&:nth-child(n + 4){
-					@media (--tablet){
+					@media (--desktop){
 						margin-bottom:0;
 					}
 				}
@@ -234,14 +242,11 @@ h3{
 		box-sizing:border-box;
 	}
 	&__slides{
-		display:flex;
 		list-style:none;
-		justify-content:space-around;
-		align-items:center;
+		lost-utility: clearfix;
 		width:100%;
 		padding:0;
 		margin:0;
-		flex-wrap:wrap;
 		li{
 			lost-column:1/3;
 			@media (--tablet){
