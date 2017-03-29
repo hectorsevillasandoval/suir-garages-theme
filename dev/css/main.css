@@ -21,6 +21,13 @@ img{
   max-width: 100%;
   height: auto;
 }
+.slide-separator{
+	min-height: 400px;
+	height: 100%;
+}
+a{
+	text-decoration: none;
+}
 h1{
 	font-family: var(--main-font);
 	text-transform: uppercase;
@@ -51,10 +58,21 @@ h3{
 }
 .layout{
   &--wrapper{
+		lost-utility: clearfix;
     @media (--tablet){
       lost-center: 960px;
     }
   }
+	&__left{
+		@media (--tablet){
+			lost-column: 3/4;
+		}
+	}
+	&__right{
+		@media (--tablet){
+			lost-column: 1/4;
+		}
+	}
 }
 /*
 **** HEADER ****
@@ -67,8 +85,9 @@ h3{
     padding: 1.2rem 1rem;
     box-sizing: border-box;
     position: relative;
+		lost-utility: clearfix;
     @media (--desktop){
-      padding: 2rem 0;
+      padding: .5rem 0;
     }
   }
 
@@ -85,7 +104,8 @@ h3{
 
   &__mainMenu{
     display: none;
-    order:2;
+    position: relative;
+		top:10px;
 		lost-utility:clearfix;
     @media (--desktop){
 			display: block;
@@ -98,6 +118,7 @@ h3{
       list-style: none;
       margin: 0;
 			text-align: right;
+			padding: 0;
 
     }
     & a{
@@ -144,7 +165,12 @@ h3{
 /*
 **** HEADER END ****
 */
-
+.slider{
+	li{
+		background-size: cover;
+		background-position: 50% center;
+	}
+}
 
 /*
 **** MAIN ****
@@ -181,17 +207,19 @@ h3{
 		}
 
 		&Container{
-			lost-flex-container: column;
+			/*lost-flex-container: column;*/
+			lost-utility: clearfix;
 			@media (--tablet){
-				lost-flex-container: row;
-				flex-wrap: wrap;
+				/*lost-flex-container: row;
+				flex-wrap: wrap;*/
 			}
 
 			> div{
 				text-align: center;
 				/*max-width: 172px;*/
-				margin-bottom: 2rem;
-				align-items: flex-start;
+				margin-bottom: 1rem;
+				max-height: 140px;
+				overflow: hidden;
 				@media (--tablet){
 					lost-column:1/2 auto 10px;
 				}
@@ -211,8 +239,6 @@ h3{
 
 		}
 
-		}
-
 		h3{
 			color:white;
 			background-color: var(--main-red);
@@ -224,6 +250,15 @@ h3{
 				@mixin triangle;
 			}
 		}
+		img{
+			width: 100%;
+			height:auto;
+			display: block;
+		}
+
+		}
+
+
 	}
 }
 
@@ -303,3 +338,87 @@ h3{
 /*
 **** FOOTER END ****
 */
+
+/*
+*		Categories Template
+*/
+.category{
+	&__container{
+		lost-utility: clearfix;
+		margin-top: 2rem;
+	}
+	&__content{
+		display: none;
+	}
+	&__item{
+		lost-column: 1/3 auto 8px;
+		margin-bottom: 1.2rem;
+		img{
+			width:100%;
+			height: auto;
+			display: block;
+		}
+		&-title{
+			background-color: var(--strong-gray);
+			color: white;
+			text-align: center;
+			padding-top: .7rem;
+			padding-bottom: .7rem;
+			margin: 0;
+			position:relative;
+			&:before{
+				@mixin triangle;
+			}
+		}
+		a{
+			&:hover h3{
+				background-color: var(--main-red);
+			}
+		}
+	}
+
+	&__menu{
+		background-color: var(--light-gray);
+		padding-bottom: 1rem;
+		h3{
+			background-color: var(--main-red);
+			font-weight: 400;
+			font-family: "Poppins";
+			text-align: center;
+			color: white;
+			margin: 0;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			position: relative;
+			&:before{
+				@mixin triangle;
+			}
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			position: relative;
+			&.live{
+				&:before{
+					content: "\f0da";
+					font-family: "fontawesome";
+					position: absolute;
+					top:50%;
+					margin-top: -9px;
+				}
+			}
+		}
+
+		a{
+			font-family: "Oswald";
+			display: block;
+			padding: 1rem;
+			color: var(--strong-gray);
+			&:hover{
+				color: var(--main-red);
+			}
+		}
+	}
+
+}

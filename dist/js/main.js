@@ -21,6 +21,7 @@ jQuery(function($){
       animation: "slide",
       controlNav: false
   });
+  $('.product__mainPhoto .slides img').magnify();
 
   // The slider being synced must be initialized first
   $('.product__carousel').flexslider({
@@ -41,7 +42,7 @@ jQuery(function($){
     sync: ".product__carousel"
   });
 
-  $("#tabs").tabs();
+
 
 /*
   $('.carousel').flexslider({
