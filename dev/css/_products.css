@@ -55,38 +55,38 @@
       position: relative;
       &:first-child{
         text-align:right;
+        margin-right: 4px;
       }
-      &:first-child:before{
+      &.previous:before{
         content: "\f053";
         font-family: "fontawesome";
         position: absolute;
-        left:15px;
-        top: 17px;
+        left:8px;
+        top: 50%;
+        margin-top: -9px;
         color:white;
       }
-      &:last-child:before{
+      &.next:before{
         content: "\f054";
         font-family: "fontawesome";
         position: absolute;
-        right:15px;
-        top: 17px;
+        right:8px;
+        top: 50%;
+        margin-top: -9px;
         color:white;
-      }
-      &:first-child a{
-        padding-right: 1.5rem;
-        padding-left: 0;
       }
     }
     a{
       display:block;
       background-color: var(--main-red);
-      width: 130px;
+      width: 150px;
       color:white;
-      padding: .8rem 0;
+      padding: .8rem 1.5rem;
       text-decoration: none;
       padding-left: 1.5rem;
       font-size: 18px;
       text-transform: uppercase;
+      box-sizing: border-box;
 
     }
   }
